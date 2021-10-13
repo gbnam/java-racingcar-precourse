@@ -1,8 +1,8 @@
 package racinggame.dto;
 
 import nextstep.utils.Console;
-import racinggame.common.CommonConstants;
-import racinggame.enums.RacingEnum;
+import racinggame.enums.RacingMessageEnum;
+import racinggame.enums.RacingNumberEnum;
 import racinggame.view.RacingView;
 
 import java.util.ArrayList;
@@ -24,6 +24,10 @@ public class CarGroup {
         this.carList = tempCarList;
     }
 
+    public CarGroup(List<Car> list) {
+        carList = list;
+    }
+
     // 입력받은 값 split, Car 타입 변환, 리스트에 입력하여 리턴
     private List<Car> setCarNames(String carNames) {
         List<Car> tempCarList = new ArrayList<>();
@@ -38,12 +42,12 @@ public class CarGroup {
     public boolean isPassNameLengthCheck(List<Car> tempCarList){
         boolean isPass = true;
         for(Car car : tempCarList){
-            isPass &= car.getName().length() <= CommonConstants.NAME_LENGTH_LIMIT;
+            isPass &= car.getName().length() <= RacingNumberEnum.NAME_LENGTH_LIMIT.number;
         }
 
         // 체크결과 false 일때 메세지 출력
         if(!isPass){
-            RacingView.printIllegalArgument(RacingEnum.ILLEGAL_NAME_LENGTH_MESSAGE.message);
+            RacingView.printIllegalArgument(RacingMessageEnum.ILLEGAL_NAME_LENGTH_MESSAGE.message);
         }
         return isPass;
     }
