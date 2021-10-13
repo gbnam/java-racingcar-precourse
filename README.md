@@ -39,20 +39,20 @@
 
 
 ## 제약사항 체크
-- [ ] 실행 시작점은 src/main/java의 racinggame.Application의 main()이다
-- [ ] JDK8 실행가능
-- [ ] nextstep.utils의 Randoms.pickNumberInRange(), Console.readLine() API 활용
-- [ ] 구현 완료시 src/test/java 폴더의 racinggame.ApplicationTest에 있는 2개의 testcase 성공
-- [ ] [자바 코드 컨벤션](https://naver.github.io/hackday-conventions-java/) 지키면서 프로그래밍
-- [ ] indent depth 2가 넘지 않도록 구현
-- [ ] stream api 사용금지
-- [ ] else 사용금지
-- [ ] 함수(메소드)는 라인 수 10 이하로 구현 
+- [x] 실행 시작점은 src/main/java의 racinggame.Application의 main()이다
+- [x] JDK8 실행가능
+- [x] nextstep.utils의 Randoms.pickNumberInRange(), Console.readLine() API 활용
+- [x] 구현 완료시 src/test/java 폴더의 racinggame.ApplicationTest에 있는 2개의 testcase 성공
+- [x] [자바 코드 컨벤션](https://naver.github.io/hackday-conventions-java/) 지키면서 프로그래밍
+- [x] indent depth 2가 넘지 않도록 구현
+- [x] stream api 사용금지
+- [x] else 사용금지
+- [x] 함수(메소드)는 라인 수 10 이하로 구현 
 
 ##단위테스트
-- [ ] 도메인 로직에 단위테스트 구현 (UI로직은 제외)
-- [ ] 핵심로직과 UI로직 분리
-- [ ] MVC패턴 기반 구현 후 View, Controller를 제외한 Model에 대한 단위테스트 추가
+- [x] 도메인 로직에 단위테스트 구현 (UI로직은 제외)
+- [x] 핵심로직과 UI로직 분리
+- [x] MVC패턴 기반 구현 후 View, Controller를 제외한 Model에 대한 단위테스트 추가
 
 ## 제출
 - 커밋시 참고 : [the AngularJS commit conventions](https://gist.github.com/stephenparish/9941e89d80e2bc58a153/)
