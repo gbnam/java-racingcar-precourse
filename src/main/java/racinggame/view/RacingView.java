@@ -18,4 +18,9 @@ public class RacingView {
     public static void printInputRepeatNumber(){
         System.out.println(RacingMessageEnum.INPUT_REPEAT_NUMBER_MESSAGE.message);
     }
+
+    public static void printNewLine(){
+        System.out.println();
+    }
+
 }

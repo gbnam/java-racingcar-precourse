@@ -1,6 +1,7 @@
 package racinggame.controller;
 
 import nextstep.utils.Console;
+import nextstep.utils.Randoms;
 import racinggame.dto.CarGroup;
 import racinggame.model.InputParser;
 import racinggame.view.RacingView;
@@ -23,8 +24,10 @@ public class RacingController {
 
         // 반복횟수만큼 반복
         for(int i=0; i<repeatNumber; i++){
-            // 반복
-
+            carGroup.raceStart();
+            carGroup.printCarsStatus();
         }
+
+
     }
 }

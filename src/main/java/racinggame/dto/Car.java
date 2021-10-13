@@ -1,6 +1,7 @@
 package racinggame.dto;
 
 import racinggame.enums.RacingMessageEnum;
+import racinggame.model.RacingModel;
 import racinggame.view.RacingView;
 
 public class Car {
@@ -21,10 +22,11 @@ public class Car {
     }
 
     public void printCarStatus() {
-        String movedIcon = "";
-        for (int i = 0; i < movingCount; i++) {
-            movedIcon += RacingMessageEnum.RACING_MOVING_ICON.message;
-        }
-        RacingView.printCarStatus(name, movedIcon);
+        String movingCountIcon = RacingModel.getMovingCountIcon(movingCount);
+        RacingView.printCarStatus(name, movingCountIcon);
+    }
+
+    void move(){
+        this.movingCount++;
     }
 }
