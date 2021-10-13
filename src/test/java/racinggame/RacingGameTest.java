@@ -5,7 +5,12 @@ import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import racinggame.dto.Car;
 import racinggame.model.InputParser;
+import racinggame.model.RacingModel;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class RacingGameTest extends NSTest {
     private static final int MOVING_FORWARD = 4;
@@ -36,6 +41,19 @@ public class RacingGameTest extends NSTest {
         Assertions.assertThat(inputParser.checkInputRepeatNumber(input1)).isEqualTo(false);
         Assertions.assertThat(inputParser.checkInputRepeatNumber(input2)).isEqualTo(false);
         Assertions.assertThat(inputParser.checkInputRepeatNumber(input3)).isEqualTo(true);
+    }
+
+    @Test
+    void 우승자_찾기_테스트(){
+        List<Car> carList = new ArrayList<>();
+        carList.add(new Car("a",7));
+        carList.add(new Car("b",4));
+        carList.add(new Car("c",7));
+        carList.add(new Car("d",1));
+
+        RacingModel racingModel = new RacingModel();
+        String winnerName = racingModel.findWinner(carList);
+        Assertions.assertThat(winnerName).isEqualTo("a,c");
     }
 
     @AfterEach

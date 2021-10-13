@@ -1,10 +1,7 @@
 package racinggame.controller;
 
-import nextstep.utils.Console;
-import nextstep.utils.Randoms;
 import racinggame.dto.CarGroup;
 import racinggame.model.InputParser;
-import racinggame.view.RacingView;
 
 public class RacingController {
 
@@ -28,6 +25,8 @@ public class RacingController {
             carGroup.printCarsStatus();
         }
 
+        // 최종결과 출력
+        carGroup.printWinner();
 
     }
 }

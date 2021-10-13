@@ -1,6 +1,5 @@
 package racinggame.dto;
 
-import racinggame.enums.RacingMessageEnum;
 import racinggame.model.RacingModel;
 import racinggame.view.RacingView;
 
@@ -11,6 +10,11 @@ public class Car {
     public Car(String name) {
         this.name = name;
         this.movingCount = 0;
+    }
+
+    public Car(String name, int movingCount) {
+        this.name = name;
+        this.movingCount = movingCount;
     }
 
     public String getName() {
@@ -26,7 +30,14 @@ public class Car {
         RacingView.printCarStatus(name, movingCountIcon);
     }
 
-    void move(){
+    void move() {
         this.movingCount++;
+    }
+
+    public String equalsScoreThenGetName(int score) {
+        if (score == movingCount) {
+            return name + ",";
+        }
+        return "";
     }
 }

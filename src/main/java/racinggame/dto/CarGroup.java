@@ -48,5 +48,8 @@ public class CarGroup {
         }
     }
 
-
+    public void printWinner() {
+        String winnerName = RacingModel.findWinner(carList);
+        RacingView.printRacingResult(winnerName);
+    }
 }

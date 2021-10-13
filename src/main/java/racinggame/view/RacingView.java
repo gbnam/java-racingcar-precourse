@@ -23,4 +23,7 @@ public class RacingView {
         System.out.println();
     }
 
+    public static void printRacingResult(String winnerName){
+        System.out.printf(RacingMessageEnum.RACING_RESULT_MESSAGE.message, winnerName);
+    }
 }
