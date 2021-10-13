@@ -13,7 +13,7 @@ public class RacingModel {
     public static String getMovingCountIcon(int movingCount) {
         String movingCountIcon = "";
         for (int i = 0; i < movingCount; i++) {
-            movingCountIcon += RacingMessageEnum.RACING_MOVING_ICON.message;
+            movingCountIcon = movingCountIcon.concat(RacingMessageEnum.RACING_MOVING_ICON.message);
         }
         return movingCountIcon;
     }
@@ -21,12 +21,10 @@ public class RacingModel {
     // 5글자 이하여부 체크
     public static boolean isPassNameLengthValidation(List<Car> tempCarList) {
         boolean isPass = true;
-        for (Car car : tempCarList) {
+        for (Car car : tempCarList) { // 1개라도 false 라면 isPass == false
             isPass &= car.getName().length() <= RacingNumberEnum.NAME_LENGTH_LIMIT.number;
         }
-
-        // 체크결과 false 일때 메세지 출력
-        if (!isPass) {
+        if (!isPass) { // 체크결과 false 일때 메세지 출력
             RacingView.printIllegalArgument(RacingMessageEnum.ILLEGAL_NAME_LENGTH_MESSAGE.message);
         }
         return isPass;
@@ -41,14 +39,7 @@ public class RacingModel {
     private static int getLargestScore(List<Car> carList) {
         int maxScore = -1;
         for (Car car : carList) {
-            maxScore = getLargerScore(car.getMovingCount(), maxScore);
-        }
-        return maxScore;
-    }
-
-    private static int getLargerScore(int movingCount, int maxScore) {
-        if (movingCount > maxScore) {
-            return movingCount;
+            maxScore = Math.max(car.getMovingCount(), maxScore);
         }
         return maxScore;
     }
@@ -56,7 +47,7 @@ public class RacingModel {
     private static String getWinnerName(List<Car> carList, int largestScore) {
         String winnerName = "";
         for (Car car : carList) {
-            winnerName += car.equalsScoreThenGetName(largestScore);
+            winnerName = winnerName.concat(car.equalsScoreThenGetName(largestScore));
         }
         return winnerName;
     }
