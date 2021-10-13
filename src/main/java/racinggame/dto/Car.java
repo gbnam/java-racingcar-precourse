@@ -23,7 +23,7 @@ public class Car {
     public void printCarStatus() {
         String movedIcon = "";
         for (int i = 0; i < movingCount; i++) {
-            movedIcon += RacingEnum.RACING_MOVING_ICON;
+            movedIcon += RacingEnum.RACING_MOVING_ICON.message;
         }
         RacingView.printCarStatus(name, movedIcon);
     }

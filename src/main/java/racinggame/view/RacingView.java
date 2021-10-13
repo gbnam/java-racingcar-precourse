@@ -10,4 +10,8 @@ public class RacingView {
     public static void printCarStatus(String carName, String movingCountIcon) {
         System.out.println(carName + RacingEnum.RACING_RESULT_SEPERATOR.message + movingCountIcon);
     }
+
+    public static void printIllegalArgument(String message){
+        System.out.println(message);
+    }
 }
